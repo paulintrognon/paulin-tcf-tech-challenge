@@ -4,8 +4,7 @@
     "strict": true,
     "target": "es6",
     "module": "commonjs",
-    "outDir": "build",
-    "baseUrl": "./src"
+    "outDir": "build"
   },
   "include": [
     "src/**/*.ts"
