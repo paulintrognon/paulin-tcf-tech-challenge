@@ -7,8 +7,6 @@ import '../styles/styles.scss'
 const App: React.FC<AppProps> = ({ Component, pageProps }) => (
   <SWRConfig
     value={{
-      revalidateOnFocus: false,
-      revalidateOnReconnect: false,
       fetcher: (url, init) => {
         console.log(`${BASE_API_URL}${url}`)
         return fetch(`${BASE_API_URL}${url}`, init).then((res) => res.json())
