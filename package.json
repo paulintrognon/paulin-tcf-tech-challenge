@@ -2,6 +2,7 @@
   "name": "paulin-tcf-tech-challenge",
   "scripts": {
     "front:type-check": "cd front && yarn type-check",
+    "api:type-check": "cd api && yarn type-check",
     "lint": "eslint --ext js,ts,tsx --fix"
   },
   "husky": {

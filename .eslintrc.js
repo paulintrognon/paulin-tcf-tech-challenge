@@ -8,6 +8,9 @@ module.exports = {
   ignorePatterns: ['node_modules/*', '.build/*', '!.prettierrc.js'], // We don't want to lint generated files nor node_modules, but we want to lint .prettierrc.js (ignored by default by eslint)
   extends: ['eslint:recommended'],
   overrides: [
+    /**
+     * FRONT RULES
+     */
     {
       files: ['front/**/*.ts', 'front/**/*.tsx'],
       parser: '@typescript-eslint/parser',
@@ -47,6 +50,30 @@ module.exports = {
             allowConciseArrowFunctionExpressionsStartingWithVoid: true,
           },
         ],
+
+        // Includes .prettierrc.js rules
+        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+      },
+    },
+    /**
+     * API RULES
+     */
+    {
+      files: ['api/**/*.ts', 'api/**/*.tsx'],
+      parser: '@typescript-eslint/parser',
+      env: {
+        node: true,
+        es6: true,
+      },
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier/@typescript-eslint',
+        'plugin:prettier/recommended',
+      ],
+      rules: {
+        // Why would you want unused vars?
+        '@typescript-eslint/no-unused-vars': ['error'],
 
         // Includes .prettierrc.js rules
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
