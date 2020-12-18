@@ -17,7 +17,7 @@ export const categories: CategoryType[] = [
         },
       },
       {
-        id: '1-2-1',
+        id: '1-2',
         question: 'Est-il possible de vous joindre par téléphone ?',
         answer: {
           id: '1-2-1',
