@@ -1,23 +1,28 @@
 import useSWR from 'swr'
 import { CategoryType } from '../../../types/CategoryType'
 import styles from './Categories.module.scss'
+import Category from './Category/Category'
 
 type CategoriesApiResponseType = {
   categories: CategoryType[]
 }
 
 const Categories: React.FC = () => {
-  const { data, isValidating } = useSWR<CategoriesApiResponseType>('/categories')
+  const { data } = useSWR<CategoriesApiResponseType>('/categories')
 
-  if (isValidating) {
-    return <p>Chargement...</p>
+  if (!data) {
+    return null
   }
+
+  const categories = data.categories
 
   return (
     <section className={styles.container}>
-      {data
-        ? data.categories.map((category) => <p key={category.title}>{category.title}</p>)
-        : null}
+      {categories.length ? (
+        categories.map((category) => <Category key={category.title} category={category} />)
+      ) : (
+        <p>No categories found.</p>
+      )}
     </section>
   )
 }
