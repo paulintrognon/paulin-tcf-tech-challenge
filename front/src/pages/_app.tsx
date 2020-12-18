@@ -8,7 +8,6 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
   <SWRConfig
     value={{
       fetcher: (url, init) => {
-        console.log(`${BASE_API_URL}${url}`)
         return fetch(`${BASE_API_URL}${url}`, init).then((res) => res.json())
       },
     }}
