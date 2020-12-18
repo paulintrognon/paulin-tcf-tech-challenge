@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import { SWRConfig } from 'swr'
 import { BASE_API_URL } from '../services/api/api'
+import '../styles/styles.scss'
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => (
   <SWRConfig

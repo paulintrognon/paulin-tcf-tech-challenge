@@ -1,0 +1,16 @@
+@import './reset.scss';
+@import './variables.scss';
+
+:root {
+  font-size: 100%; // font-size default: 16px
+}
+
+body {
+  background: var(--color-light-grey);
+  min-height: 100vh;
+  font-family: 'arial', sans-serif;
+  color: var(--color-primary);
+  font-size: 1rem;
+  min-width: 20rem;
+  overflow-y: scroll;
+}

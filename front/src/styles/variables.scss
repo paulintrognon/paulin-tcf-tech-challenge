@@ -1,0 +1,14 @@
+:root {
+  /* Colors */
+  --color-primary: #4b5870;
+  --color-black: #262626;
+  --color-light-grey: #f9f9f9;
+
+  /* --font-sizes */
+  @for $i from 12 through 32 {
+    --font-size-#{$i}: #{$i/16}rem;
+  }
+
+  /* Size */
+  --max-width: 64rem;
+}
